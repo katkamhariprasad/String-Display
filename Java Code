@@ -1,0 +1,93 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class TaskSolution {
+  
+	public static void main(String args[])
+    {
+        String Input;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter String:");
+        Input = sc.nextLine();
+        System.out.println(Input);
+        String[] values = Input.split(" ");
+        
+        if((Input.charAt(0)!='{')||(Input.charAt(Input.length()-1)!='}')|| (Input.length() <5 )){
+            System.out.println("Invalid Input");
+            System.exit(0);
+        }
+        for(int i =0; i<values.length;i++)
+        {
+            
+            if(i==0)
+            {
+                values[i]=values[i].substring(1, values[i].length());
+                System.out.println("initially "+values[i]);
+            }
+if(i==values.length-1)
+            {
+	        
+                values[i]=values[i].substring(0, values[i].length()-1);
+                System.out.println(values[i]);
+              
+            }
+            
+             
+        }
+        String[] values1=values;
+        ArrayList<String> arrlist = new ArrayList<String>(values1.length);
+       
+       for (int h=0;h<values1.length;h++)
+       {
+    	   System.out.println("length"+values1.length);
+    	   arrlist.add(values1[h]);
+       }
+    
+        for(int i=0; i<arrlist.size();i++)
+        	
+        	
+        {
+        	
+        	
+        	System.out.println(arrlist);
+        	System.out.println("arrlistssize"+arrlist.size());
+        	
+        if(Integer.parseInt(arrlist.get(i))<0)
+        {
+        	if((Integer.parseInt(arrlist.get(i))+10) > Integer.parseInt(arrlist.get(i-1)))
+        	{
+        		
+        		for( int j=0;j<=i-1;j++)
+        		{
+        			
+        	
+        	System.out.println("Contents of al: " +arrlist.get(0));
+        		arrlist.remove(0);
+        		}
+        		
+        		arrlist.remove(0);
+        		 System.out.println( "after"+ arrlist);	
+        		 i=0;
+        	}
+        	
+        	
+        }
+        
+             
+        }   
+       
+        
+        
+        
+        
+        for (int k=0;k<arrlist.size();k++)
+		{
+    	  System.out.println("last"+arrlist);
+		}
+      
+    
+       
+    
+    
+    
+}
+}
